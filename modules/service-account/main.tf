@@ -1,11 +1,4 @@
 #=======================================================
-# Enable CRM API                                                                                                                       #=======================================================
-resource "google_project_service" "gcp_resource_manager_api" {
-  project = var.id-project
-  service = "cloudresourcemanager.googleapis.com"
-}
-
-#=======================================================
 # Service Account
 #=======================================================
 resource "google_service_account" "srv-acct" {
