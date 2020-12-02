@@ -42,15 +42,20 @@ resource "google_container_cluster" "gke-cluster" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
+  master_auth {
+    username = var.username
+    password = var.password
+
+    client_certificate_config {
+      issue_client_certificate = false
+    }
+  }
+   
   ip_allocation_policy {
     cluster_secondary_range_name  = "${local.name-prefix}${var.config-gke-cluster.cluster-secondary-name-suffix}"
     services_secondary_range_name = "${local.name-prefix}${var.config-gke-cluster.cluster-service-name-suffix}"
   }
 
-  timeouts {
-    create = "15m"
-    update = "40m"
-  }
 }
 
 #=======================================================

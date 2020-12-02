@@ -30,6 +30,14 @@ variable "name-subnet-cluster" {
 #=======================================================
 # Variables - GKE                                  
 #=======================================================
+variable "username" {
+  description = "GKE cluster admin username"
+}
+
+variable "password" {
+  description = "GKE cluster admin password"
+}
+
 variable "config-gke-cluster" {
   type        = map(string)
   description = "Map of GKE cluster configuration"
