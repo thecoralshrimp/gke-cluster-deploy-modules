@@ -7,6 +7,7 @@ output "gke-endpoint" {
 
 output "cluster" {
   value = google_container_cluster.gke-cluster
+  sensitive = true
 }
 
 output "nodepools" {
