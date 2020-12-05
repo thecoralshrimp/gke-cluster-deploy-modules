@@ -43,8 +43,8 @@ resource "google_container_cluster" "gke-cluster" {
   initial_node_count       = 1
 
   master_auth {
-    username = var.username
-    password = var.password
+    username = var.k8s-username
+    password = var.k8s-password
 
     client_certificate_config {
       issue_client_certificate = false

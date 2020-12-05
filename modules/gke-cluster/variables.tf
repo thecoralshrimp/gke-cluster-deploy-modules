@@ -30,11 +30,11 @@ variable "name-subnet-cluster" {
 #=======================================================
 # Variables - GKE                                  
 #=======================================================
-variable "username" {
+variable "k8s-username" {
   description = "GKE cluster admin username"
 }
 
-variable "password" {
+variable "k8s-password" {
   description = "GKE cluster admin password"
 }
 
